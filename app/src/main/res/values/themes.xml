@@ -20,8 +20,9 @@
 
     <style name="Theme.Todoster.Starting" parent="Theme.SplashScreen">
         <item name="windowSplashScreenBackground">@color/ash</item>
-        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_launcher_foreground</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_launcher_splash_foreground</item>
         <item name="windowSplashScreenAnimationDuration">300</item>
+        <item name="iconForegroundColor">@color/tall_poppy</item>
         <item name="postSplashScreenTheme">@style/Theme.Todoster</item>
     </style>
 
