@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
+    <color name="brand_yellow">#FFECB3</color>
+    <color name="dark_background">#1C1C1E</color>
+    <color name="dark_surface">#2C2C2E</color>
+
+    <color name="light_background">#F2F2F7</color>
+    <color name="light_surface">#FFFFFFFF</color>
+
     <color name="white">#FFFFFFFF</color>
+    <color name="black">#FF000000</color>
+    <color name="light_grey_text">#E0E0E0</color>
+    <color name="medium_grey_text">#8A8A8E</color>
 </resources>
