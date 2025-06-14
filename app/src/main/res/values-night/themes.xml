@@ -20,23 +20,10 @@
     <style name="Theme.Todoster" parent="Base.Theme.Todoster" />
 
     <style name="Theme.Todoster.Starting" parent="Theme.SplashScreen">
-        <item name="windowSplashScreenBackground">@color/primary_dark</item>
+        <item name="windowSplashScreenBackground">@color/primary_light</item>
         <item name="windowSplashScreenAnimatedIcon">@drawable/ic_launcher_foreground</item>
         <item name="windowSplashScreenAnimationDuration">300</item>
         <item name="postSplashScreenTheme">@style/Theme.Todoster</item>
     </style>
 
-    <style name="TextAppearance.Body.Small" parent="TextAppearance.Material3.BodySmall">
-        <item name="fontFamily">@font/raleway</item>
-        <item name="android:fontFamily">@font/raleway</item>
-        <item name="android:textColor">@color/text_secondary_dark</item>
-        <item name="fontVariationSettings">"'wght' 400"</item>
-    </style>
-
-    <style name="TextAppearance.Label.Small" parent="TextAppearance.Material3.LabelSmall">
-        <item name="fontFamily">@font/raleway</item>
-        <item name="android:fontFamily">@font/raleway</item>
-        <item name="android:textColor">@color/text_secondary_dark</item>
-        <item name="fontVariationSettings">"'wght' 500"</item>
-    </style>
 </resources>
