@@ -1,18 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
 
 
     <style name="Base.Theme.Todoster" parent="Theme.Material3.DayNight.NoActionBar">
-        <item name="colorPrimary">@color/brand_yellow</item>
-        <item name="colorOnPrimary">@color/black</item>
-        <item name="android:colorBackground">@color/light_background</item>
-        <item name="colorSurface">@color/light_surface</item>
-        <item name="colorOnBackground">@color/black</item>
-        <item name="colorOnSurface">@color/black</item>
-        <item name="colorOnSurfaceVariant">@color/medium_grey_text</item>
+        <item name="colorPrimary">@color/primary_light</item>
+        <item name="colorPrimaryVariant">@color/primary_variant_light</item>
+        <item name="colorSecondary">@color/secondary_light</item>
+        <item name="colorOnPrimary">@color/on_primary_light</item>
+        <item name="colorOnSecondary">@color/on_secondary_light</item>
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <item name="android:colorBackground">@color/background_light</item>
+        <item name="colorSurface">@color/surface_light</item>
+        <item name="colorOnBackground">@color/on_background_light</item>
+        <item name="colorOnSurface">@color/on_surface_light</item>
+        <item name="colorOnSurfaceVariant">@color/on_surface_variant_light</item>
         <item name="android:textViewStyle">@style/TextAppearance.Body.Medium</item>
     </style>
 
     <style name="Theme.Todoster" parent="Base.Theme.Todoster" />
+
+    <style name="Theme.Todoster.Starting" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/primary_light</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_launcher_foreground</item>
+        <item name="windowSplashScreenAnimationDuration">300</item>
+        <item name="postSplashScreenTheme">@style/Theme.Todoster</item>
+    </style>
+
+    <style name="TextAppearance.Headline.Large" parent="TextAppearance.Material3.HeadlineLarge">
+        <item name="fontFamily">@font/raleway</item>
+        <item name="android:fontFamily">@font/raleway</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
+        <item name="fontVariationSettings">"'wght' 700"</item>
+    </style>
+
+    <style name="TextAppearance.Title.Large" parent="TextAppearance.Material3.TitleLarge">
+        <item name="fontFamily">@font/raleway</item>
+        <item name="android:fontFamily">@font/raleway</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
+        <item name="fontVariationSettings">"'wght' 600"</item>
+    </style>
 
     <style name="TextAppearance.Title.Medium" parent="TextAppearance.Material3.TitleMedium">
         <item name="fontFamily">@font/raleway</item>
@@ -24,21 +50,42 @@
     <style name="TextAppearance.Body.Large" parent="TextAppearance.Material3.BodyLarge">
         <item name="fontFamily">@font/raleway</item>
         <item name="android:fontFamily">@font/raleway</item>
-        <item name="android:textColor">?attr/colorOnSurfaceVariant</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
         <item name="fontVariationSettings">"'wght' 400"</item>
     </style>
 
     <style name="TextAppearance.Body.Medium" parent="TextAppearance.Material3.BodyMedium">
         <item name="fontFamily">@font/raleway</item>
         <item name="android:fontFamily">@font/raleway</item>
-        <item name="android:textColor">?attr/colorOnSurfaceVariant</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
         <item name="fontVariationSettings">"'wght' 400"</item>
+    </style>
+
+    <style name="TextAppearance.Body.Small" parent="TextAppearance.Material3.BodySmall">
+        <item name="fontFamily">@font/raleway</item>
+        <item name="android:fontFamily">@font/raleway</item>
+        <item name="android:textColor">@color/text_secondary_light</item>
+        <item name="fontVariationSettings">"'wght' 400"</item>
+    </style>
+
+    <style name="TextAppearance.Label.Large" parent="TextAppearance.Material3.LabelLarge">
+        <item name="fontFamily">@font/raleway</item>
+        <item name="android:fontFamily">@font/raleway</item>
+        <item name="android:textColor">?attr/colorOnSurfaceVariant</item>
+        <item name="fontVariationSettings">"'wght' 500"</item>
+    </style>
+
+    <style name="TextAppearance.Label.Medium" parent="TextAppearance.Material3.LabelMedium">
+        <item name="fontFamily">@font/raleway</item>
+        <item name="android:fontFamily">@font/raleway</item>
+        <item name="android:textColor">?attr/colorOnSurfaceVariant</item>
+        <item name="fontVariationSettings">"'wght' 500"</item>
     </style>
 
     <style name="TextAppearance.Label.Small" parent="TextAppearance.Material3.LabelSmall">
         <item name="fontFamily">@font/raleway</item>
         <item name="android:fontFamily">@font/raleway</item>
-        <item name="android:textColor">?attr/colorOnSurfaceVariant</item>
+        <item name="android:textColor">@color/text_secondary_light</item>
         <item name="fontVariationSettings">"'wght' 500"</item>
     </style>
 

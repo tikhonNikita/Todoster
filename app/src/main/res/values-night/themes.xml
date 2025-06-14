@@ -1,7 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.Todoster" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <item name="colorPrimary">@color/primary_dark</item>
+        <item name="colorPrimaryVariant">@color/primary_variant_dark</item>
+        <item name="colorSecondary">@color/secondary_dark</item>
+        <item name="colorOnPrimary">@color/on_primary_dark</item>
+        <item name="colorOnSecondary">@color/on_secondary_dark</item>
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <item name="android:colorBackground">@color/background_dark</item>
+        <item name="colorSurface">@color/surface_dark</item>
+        <item name="colorOnBackground">@color/on_background_dark</item>
+        <item name="colorOnSurface">@color/on_surface_dark</item>
+        <item name="colorOnSurfaceVariant">@color/on_surface_variant_dark</item>
+        <item name="android:textViewStyle">@style/TextAppearance.Body.Medium</item>
+    </style>
+
+    <style name="Theme.Todoster" parent="Base.Theme.Todoster" />
+
+    <style name="Theme.Todoster.Starting" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/primary_dark</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_launcher_foreground</item>
+        <item name="windowSplashScreenAnimationDuration">300</item>
+        <item name="postSplashScreenTheme">@style/Theme.Todoster</item>
+    </style>
+
+    <style name="TextAppearance.Body.Small" parent="TextAppearance.Material3.BodySmall">
+        <item name="fontFamily">@font/raleway</item>
+        <item name="android:fontFamily">@font/raleway</item>
+        <item name="android:textColor">@color/text_secondary_dark</item>
+        <item name="fontVariationSettings">"'wght' 400"</item>
+    </style>
+
+    <style name="TextAppearance.Label.Small" parent="TextAppearance.Material3.LabelSmall">
+        <item name="fontFamily">@font/raleway</item>
+        <item name="android:fontFamily">@font/raleway</item>
+        <item name="android:textColor">@color/text_secondary_dark</item>
+        <item name="fontVariationSettings">"'wght' 500"</item>
     </style>
 </resources>

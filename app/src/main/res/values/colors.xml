@@ -1,14 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="brand_yellow">#FFECB3</color>
-    <color name="dark_background">#1C1C1E</color>
-    <color name="dark_surface">#2C2C2E</color>
-
-    <color name="light_background">#F2F2F7</color>
-    <color name="light_surface">#FFFFFFFF</color>
-
+    <color name="cocoa_brown">#281D1B</color>
+    <color name="ripe_lemon">#F8EE23</color>
+    <color name="tall_poppy">#AD2E27</color>
+    <color name="ash">#C4C0B4</color>
+    
+    <color name="primary_light">@color/tall_poppy</color>
+    <color name="primary_variant_light">#8B2319</color>
+    <color name="secondary_light">@color/ripe_lemon</color>
+    <color name="background_light">#F5F3F0</color>
+    <color name="surface_light">#FFFFFF</color>
+    <color name="on_primary_light">#FFFFFF</color>
+    <color name="on_secondary_light">@color/cocoa_brown</color>
+    <color name="on_background_light">#1A1110</color>
+    <color name="on_surface_light">#1A1110</color>
+    <color name="on_surface_variant_light">#4A4340</color>
+    <color name="text_secondary_light">#6B625C</color>
+    
+    <color name="primary_dark">@color/tall_poppy</color>
+    <color name="primary_variant_dark">#D63A32</color>
+    <color name="secondary_dark">#D4C91F</color>
+    <color name="background_dark">@color/cocoa_brown</color>
+    <color name="surface_dark">#3D322F</color>
+    <color name="on_primary_dark">#FFFFFF</color>
+    <color name="on_secondary_dark">@color/cocoa_brown</color>
+    <color name="on_background_dark">#E8E3DD</color>
+    <color name="on_surface_dark">#E8E3DD</color>
+    <color name="on_surface_variant_dark">#D0C7C0</color>
+    <color name="text_secondary_dark">#B8AFA8</color>
+    
     <color name="white">#FFFFFFFF</color>
     <color name="black">#FF000000</color>
-    <color name="light_grey_text">#E0E0E0</color>
-    <color name="medium_grey_text">#8A8A8E</color>
 </resources>
