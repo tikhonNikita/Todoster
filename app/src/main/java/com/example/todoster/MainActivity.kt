@@ -68,9 +68,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun navigateToAppropriateScreen() {
         if (isAuthenticated) {
-            navController.navigate(R.id.action_splash_to_hello)
-        } else {
-            navController.navigate(R.id.action_splash_to_onboarding)
+            navController.navigate(R.id.action_onboarding_to_hello)
         }
     }
 }
