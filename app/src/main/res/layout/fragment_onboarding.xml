@@ -1,57 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/surface_light"
     android:padding="24dp">
 
     <TextView
-        android:id="@+id/onboarding_title"
+        android:id="@+id/skip_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Welcome to Todoster!"
-        android:textAppearance="@style/TextAppearance.Title.Large"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="Skip"
+        android:textColor="#24A19C"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/viewpager_placeholder"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="40dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerInside"
+        android:src="@drawable/onboarding_image"
+        app:layout_constraintDimensionRatio="H,3:5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.6"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.3" />
+        app:layout_constraintTop_toBottomOf="@id/skip_button"
+        app:layout_constraintWidth_max="400dp" />
+
+    <TextView
+        android:id="@+id/onboarding_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="48dp"
+        android:lineSpacingExtra="4dp"
+        android:textFontWeight="800"
+        android:text="Your convenience in\nmaking a todo list"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.Title.Large"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toBottomOf="@id/viewpager_placeholder"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/onboarding_description"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Get ready to organize your tasks efficiently"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="32dp"
+        android:lineSpacingExtra="2dp"
+        android:text="Here's a mobile platform that helps you create task or to list so that it can help you in every job easier and faster."
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.Body.Large"
+        android:textColor="#666666"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/onboarding_title" />
 
-    <TextView
-        android:id="@+id/viewpager_placeholder"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="ViewPager will be implemented here"
-        android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.Body.Small"
-        android:textStyle="italic"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/onboarding_description" />
-
     <Button
         android:id="@+id/complete_onboarding_button"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        android:text="Get Started"
+        android:layout_height="56dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="32dp"
+        android:backgroundTint="#24A19C"
+        android:text="Continue"
+        android:textColor="#FFFFFF"
         android:textSize="16sp"
+        android:textStyle="bold"
+        app:cornerRadius="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/viewpager_placeholder" />
+        app:layout_constraintStart_toStartOf="parent" />
 
-</androidx.constraintlayout.widget.ConstraintLayout> 
+</androidx.constraintlayout.widget.ConstraintLayout>
