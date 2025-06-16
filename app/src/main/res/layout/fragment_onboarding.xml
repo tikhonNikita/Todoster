@@ -24,12 +24,11 @@
         android:adjustViewBounds="true"
         android:scaleType="centerInside"
         android:src="@drawable/onboarding_image"
-        app:layout_constraintDimensionRatio="H,3:5"
+        app:layout_constraintBottom_toTopOf="@id/onboarding_description"
+        app:layout_constraintDimensionRatio="3:5"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_percent="0.6"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/skip_button"
-        app:layout_constraintWidth_max="400dp" />
+        app:layout_constraintTop_toBottomOf="@id/skip_button" />
 
     <TextView
         android:id="@+id/onboarding_title"
@@ -39,11 +38,11 @@
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="48dp"
         android:lineSpacingExtra="4dp"
-        android:textFontWeight="800"
         android:text="Your convenience in\nmaking a todo list"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.Title.Large"
         android:textColor="#000000"
+        app:fontVariationSettings="'wght' 800"
         app:layout_constraintBottom_toBottomOf="@id/viewpager_placeholder"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -55,14 +54,15 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="32dp"
+        android:layout_marginBottom="24dp"
         android:lineSpacingExtra="2dp"
         android:text="Here's a mobile platform that helps you create task or to list so that it can help you in every job easier and faster."
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.Body.Large"
         android:textColor="#666666"
+        app:layout_constraintBottom_toTopOf="@id/complete_onboarding_button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/onboarding_title" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/complete_onboarding_button"
