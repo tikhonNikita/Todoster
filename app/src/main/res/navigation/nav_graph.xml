@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/onboardingFragment">
+    app:startDestination="@id/onboardingContainerFragment">
 
     <fragment
         android:id="@+id/helloFragment"
@@ -12,14 +12,14 @@
         tools:layout="@layout/fragment_hello" />
 
     <fragment
-        android:id="@+id/onboardingFragment"
-        android:name="com.example.todoster.OnboardingFragment"
-        android:label="OnboardingFragment"
-        tools:layout="@layout/fragment_onboarding">
+        android:id="@+id/onboardingContainerFragment"
+        android:name="com.example.todoster.OnboardingContainerFragment"
+        android:label="OnboardingContainerFragment"
+        tools:layout="@layout/fragment_onboarding_container">
         <action
             android:id="@+id/action_onboarding_to_hello"
             app:destination="@id/helloFragment"
-            app:popUpTo="@id/onboardingFragment"
+            app:popUpTo="@id/onboardingContainerFragment"
             app:popUpToInclusive="true" />
     </fragment>
 
