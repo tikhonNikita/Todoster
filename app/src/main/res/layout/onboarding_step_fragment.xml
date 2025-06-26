@@ -9,7 +9,7 @@
 
 
     <ImageView
-        android:id="@+id/viewpager_placeholder"
+        android:id="@+id/viewpager_image"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="40dp"
@@ -35,7 +35,7 @@
         android:textAppearance="@style/TextAppearance.Title.Large"
         android:textColor="#000000"
         app:fontVariationSettings="'wght' 800"
-        app:layout_constraintBottom_toBottomOf="@id/viewpager_placeholder"
+        app:layout_constraintBottom_toBottomOf="@id/viewpager_image"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 

@@ -12,7 +12,7 @@ import androidx.fragment.app.Fragment
 import com.example.todoster.R
 import com.example.todoster.core.utils.argument
 
-class OnboardingPageFragment : Fragment() {
+class OnboardingStepFragment : Fragment() {
 
     private val imageRes by argument<Int>()
     private val title by argument<String>()
@@ -26,7 +26,7 @@ class OnboardingPageFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.onboarding_page_fragment, container, false)
+        return inflater.inflate(R.layout.onboarding_step_fragment, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -35,7 +35,7 @@ class OnboardingPageFragment : Fragment() {
     }
 
     private fun setupViews(view: View) {
-        view.findViewById<ImageView>(R.id.viewpager_placeholder).setImageResource(imageRes)
+        view.findViewById<ImageView>(R.id.viewpager_image).setImageResource(imageRes)
         view.findViewById<TextView>(R.id.onboarding_title).text = title
         view.findViewById<TextView>(R.id.onboarding_description).text = description
         view.findViewById<Button>(R.id.complete_onboarding_button).text = buttonText
@@ -53,8 +53,8 @@ class OnboardingPageFragment : Fragment() {
             description: String,
             buttonText: String,
             onContinueClicked: () -> Unit
-        ): OnboardingPageFragment {
-            return OnboardingPageFragment().apply {
+        ): OnboardingStepFragment {
+            return OnboardingStepFragment().apply {
                 arguments = bundleOf(
                     "imageRes" to imageRes,
                     "title" to title,

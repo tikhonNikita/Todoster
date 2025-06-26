@@ -1,7 +1,6 @@
 package com.example.todoster.ui.onboarding
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -44,11 +43,6 @@ class OnboardingContainerFragment : Fragment() {
 
         adapter = OnboardingPagerAdapter(requireActivity())
         onboardingViewPager.setAdapter(adapter)
-
-        onboardingViewPager.setOnPageChangeListener(object : OnboardingViewPager.OnPageChangeListener {
-            override fun onPageSelected(position: Int) {
-            }
-        })
     }
 
     private fun navigateToNext() {
@@ -92,7 +86,7 @@ class OnboardingContainerFragment : Fragment() {
 
         override fun createFragment(position: Int): Fragment {
             val page = onboardingData[position]
-            return OnboardingPageFragment.newInstance(
+            return OnboardingStepFragment.newInstance(
                 imageRes = page.imageRes,
                 title = page.title,
                 description = page.description,
