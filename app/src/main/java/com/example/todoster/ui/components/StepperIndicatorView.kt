@@ -44,7 +44,6 @@ class StepperIndicatorView @JvmOverloads constructor(
     fun setColors(activeColor: Int, inactiveColor: Int) {
         this.activeColor = activeColor
         this.inactiveColor = inactiveColor
-        invalidate()
     }
 
     fun setDimensions(
@@ -64,8 +63,6 @@ class StepperIndicatorView @JvmOverloads constructor(
         
         animatedWidths = FloatArray(totalSteps) { if (it == currentStep) activeWidth else inactiveWidth }
         updateStepBounds()
-        requestLayout()
-        invalidate()
     }
 
     fun setupSteps(steps: Int) {
