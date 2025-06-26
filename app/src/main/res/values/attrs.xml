@@ -1,4 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <attr name="iconForegroundColor" format="color" />
+    
+    <declare-styleable name="OnboardingViewPager">
+        <attr name="activeColor" format="color" />
+        <attr name="inactiveColor" format="color" />
+        <attr name="activeWidth" format="dimension" />
+        <attr name="inactiveWidth" format="dimension" />
+        <attr name="indicatorHeight" format="dimension" />
+        <attr name="indicatorSpacing" format="dimension" />
+        <attr name="cornerRadius" format="dimension" />
+        <attr name="touchPadding" format="dimension" />
+    </declare-styleable>
 </resources>

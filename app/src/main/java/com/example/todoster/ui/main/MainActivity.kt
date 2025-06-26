@@ -1,4 +1,4 @@
-package com.example.todoster
+package com.example.todoster.ui.main
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
@@ -9,6 +9,7 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
+import com.example.todoster.R
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
@@ -26,7 +27,7 @@ class MainActivity : AppCompatActivity() {
 
         splashScreen.setKeepOnScreenCondition { !isInitialized }
 
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.main_activity)
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.nav_host_fragment)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -71,4 +72,4 @@ class MainActivity : AppCompatActivity() {
             navController.navigate(R.id.action_onboarding_to_hello)
         }
     }
-}
+} 

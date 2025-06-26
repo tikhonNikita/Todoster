@@ -1,4 +1,4 @@
-package com.example.todoster
+package com.example.todoster.ui.onboarding
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,7 +9,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
-import com.example.todoster.utils.argument
+import com.example.todoster.R
+import com.example.todoster.core.utils.argument
 
 class OnboardingPageFragment : Fragment() {
 
@@ -25,7 +26,7 @@ class OnboardingPageFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_onboarding, container, false)
+        return inflater.inflate(R.layout.onboarding_page_fragment, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -64,4 +65,4 @@ class OnboardingPageFragment : Fragment() {
             }
         }
     }
-}
+} 

@@ -1,4 +1,4 @@
-package com.example.todoster
+package com.example.todoster.ui.onboarding
 
 import android.os.Bundle
 import android.util.Log
@@ -10,12 +10,12 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import androidx.viewpager2.widget.ViewPager2
+import com.example.todoster.R
+import com.example.todoster.ui.components.OnboardingViewPager
 
 class OnboardingContainerFragment : Fragment() {
 
-    private lateinit var viewPager: ViewPager2
-    private lateinit var stepperIndicator: StepperIndicatorView
+    private lateinit var onboardingViewPager: OnboardingViewPager
     private lateinit var adapter: OnboardingPagerAdapter
 
     override fun onCreateView(
@@ -23,13 +23,13 @@ class OnboardingContainerFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_onboarding_container, container, false)
+        return inflater.inflate(R.layout.onboarding_container_fragment, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupSkipButton()
-        setupViewPager(view)
+        setupOnboardingViewPager(view)
     }
 
     private fun setupSkipButton() {
@@ -39,41 +39,22 @@ class OnboardingContainerFragment : Fragment() {
         }
     }
 
-    private fun setupViewPager(view: View) {
-        viewPager = view.findViewById(R.id.onboarding_viewpager)
-        stepperIndicator = view.findViewById(R.id.stepper_indicator)
+    private fun setupOnboardingViewPager(view: View) {
+        onboardingViewPager = view.findViewById(R.id.onboarding_viewpager)
 
         adapter = OnboardingPagerAdapter(requireActivity())
-        viewPager.adapter = adapter
+        onboardingViewPager.setAdapter(adapter)
 
-
-        stepperIndicator.setupSteps(adapter.itemCount)
-
-        viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
+        onboardingViewPager.setOnPageChangeListener(object : OnboardingViewPager.OnPageChangeListener {
             override fun onPageSelected(position: Int) {
-                super.onPageSelected(position)
-                stepperIndicator.setCurrentStep(position)
-            }
-
-            override fun onPageScrolled(
-                position: Int,
-                positionOffset: Float,
-                positionOffsetPixels: Int
-            ) {
-                Log.d("onPageScrolled", "onPageScrolled ${position} ${positionOffset} ${positionOffsetPixels}")
-                super.onPageScrolled(position, positionOffset, positionOffsetPixels)
             }
         })
-
-        stepperIndicator.setOnStepClickListener { stepIndex ->
-            viewPager.currentItem = stepIndex
-        }
     }
 
     private fun navigateToNext() {
-        val currentItem = viewPager.currentItem
+        val currentItem = onboardingViewPager.getCurrentItem()
         if (currentItem < adapter.itemCount - 1) {
-            viewPager.currentItem = currentItem + 1
+            onboardingViewPager.setCurrentItem(currentItem + 1)
         } else {
             findNavController().navigate(R.id.action_onboarding_to_hello)
         }

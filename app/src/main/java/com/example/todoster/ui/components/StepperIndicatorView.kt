@@ -1,4 +1,4 @@
-package com.example.todoster
+package com.example.todoster.ui.components
 
 import android.animation.ValueAnimator
 import android.content.Context
@@ -9,6 +9,7 @@ import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
 import androidx.core.content.ContextCompat
+import com.example.todoster.R
 
 class StepperIndicatorView @JvmOverloads constructor(
     context: Context,
@@ -16,15 +17,15 @@ class StepperIndicatorView @JvmOverloads constructor(
     defStyleAttr: Int = 0
 ) : View(context, attrs, defStyleAttr) {
 
-    private val activeColor = ContextCompat.getColor(context, R.color.primary_light)
-    private val inactiveColor = ContextCompat.getColor(context, R.color.primary_variant_light)
+    private var activeColor = ContextCompat.getColor(context, R.color.primary_light)
+    private var inactiveColor = ContextCompat.getColor(context, R.color.primary_variant_light)
 
-    private val activeWidth = 25f.dpToPx()
-    private val inactiveWidth = 8f.dpToPx()
-    private val indicatorHeight = 8f.dpToPx()
-    private val spacing = 10f.dpToPx()
-    private val cornerRadius = 4f.dpToPx()
-    private val touchPadding = 8f.dpToPx()
+    private var activeWidth = 25f.dpToPx()
+    private var inactiveWidth = 8f.dpToPx()
+    private var indicatorHeight = 8f.dpToPx()
+    private var spacing = 10f.dpToPx()
+    private var cornerRadius = 4f.dpToPx()
+    private var touchPadding = 8f.dpToPx()
 
     private val paint = Paint(Paint.ANTI_ALIAS_FLAG)
     private val rectF = RectF()
@@ -32,13 +33,39 @@ class StepperIndicatorView @JvmOverloads constructor(
     private var totalSteps = 3
     private var currentStep = 0
     private var animatedWidths = FloatArray(0)
-    private var animator: ValueAnimator? = null
 
     private val stepBounds = mutableListOf<RectF>()
     private var onStepClickListener: ((Int) -> Unit)? = null
 
     init {
         setupSteps(totalSteps)
+    }
+
+    fun setColors(activeColor: Int, inactiveColor: Int) {
+        this.activeColor = activeColor
+        this.inactiveColor = inactiveColor
+        invalidate()
+    }
+
+    fun setDimensions(
+        activeWidth: Float,
+        inactiveWidth: Float,
+        indicatorHeight: Float,
+        spacing: Float,
+        cornerRadius: Float,
+        touchPadding: Float
+    ) {
+        this.activeWidth = activeWidth
+        this.inactiveWidth = inactiveWidth
+        this.indicatorHeight = indicatorHeight
+        this.spacing = spacing
+        this.cornerRadius = cornerRadius
+        this.touchPadding = touchPadding
+        
+        animatedWidths = FloatArray(totalSteps) { if (it == currentStep) activeWidth else inactiveWidth }
+        updateStepBounds()
+        requestLayout()
+        invalidate()
     }
 
     fun setupSteps(steps: Int) {
@@ -49,49 +76,32 @@ class StepperIndicatorView @JvmOverloads constructor(
         invalidate()
     }
 
-    fun setCurrentStep(step: Int, animate: Boolean = true) {
-        if (step == currentStep || step < 0 || step >= totalSteps) return
-
-        val oldStep = currentStep
-        currentStep = step
-
-        if (animate) {
-            animateStepChange(oldStep, step)
-        } else {
-            for (i in 0 until totalSteps) {
-                animatedWidths[i] = if (i == currentStep) activeWidth else inactiveWidth
-            }
-            updateStepBounds()
-            invalidate()
-        }
-    }
-
     fun setOnStepClickListener(listener: (Int) -> Unit) {
         onStepClickListener = listener
     }
 
-    private fun animateStepChange(fromStep: Int, toStep: Int) {
-        animator?.cancel()
+    fun updateScrollPosition(position: Int, positionOffset: Float) {
+        if (position < 0 || position >= totalSteps) return
 
-        val startWidths = animatedWidths.clone()
-        val targetWidths =
-            FloatArray(totalSteps) { if (it == toStep) activeWidth else inactiveWidth }
+        currentStep =
+            if (positionOffset > 0.5f && position + 1 < totalSteps) position + 1 else position
 
-        animator = ValueAnimator.ofFloat(0f, 1f).apply {
-            duration = 300
-            addUpdateListener { animation ->
-                val progress = animation.animatedValue as Float
-
-                for (i in 0 until totalSteps) {
-                    animatedWidths[i] =
-                        startWidths[i] + (targetWidths[i] - startWidths[i]) * progress
+        for (i in 0 until totalSteps) {
+            animatedWidths[i] = when {
+                i == position -> {
+                    activeWidth + (inactiveWidth - activeWidth) * positionOffset
                 }
 
-                updateStepBounds()
-                invalidate()
+                i == position + 1 && position + 1 < totalSteps -> {
+                    inactiveWidth + (activeWidth - inactiveWidth) * positionOffset
+                }
+
+                else -> inactiveWidth
             }
         }
-        animator?.start()
+
+        updateStepBounds()
+        invalidate()
     }
 
     private fun updateStepBounds() {
@@ -100,7 +110,6 @@ class StepperIndicatorView @JvmOverloads constructor(
 
         for (i in 0 until totalSteps) {
             val width = animatedWidths[i]
-
 
             stepBounds.add(
                 RectF(
@@ -113,23 +122,6 @@ class StepperIndicatorView @JvmOverloads constructor(
 
             currentX += width + spacing
         }
-    }
-
-    override fun onTouchEvent(event: MotionEvent): Boolean {
-        when (event.action) {
-            MotionEvent.ACTION_DOWN -> {
-                val touchX = event.x
-                val touchY = event.y
-
-                for (i in stepBounds.indices) {
-                    if (stepBounds[i].contains(touchX, touchY)) {
-                        onStepClickListener?.invoke(i)
-                        return true
-                    }
-                }
-            }
-        }
-        return super.onTouchEvent(event)
     }
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {

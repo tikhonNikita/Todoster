@@ -7,15 +7,15 @@
 
     <fragment
         android:id="@+id/helloFragment"
-        android:name="com.example.todoster.HelloFragment"
+        android:name="com.example.todoster.ui.main.HelloFragment"
         android:label="HelloFragment"
-        tools:layout="@layout/fragment_hello" />
+        tools:layout="@layout/main_hello_fragment" />
 
     <fragment
         android:id="@+id/onboardingContainerFragment"
-        android:name="com.example.todoster.OnboardingContainerFragment"
+        android:name="com.example.todoster.ui.onboarding.OnboardingContainerFragment"
         android:label="OnboardingContainerFragment"
-        tools:layout="@layout/fragment_onboarding_container">
+        tools:layout="@layout/onboarding_container_fragment">
         <action
             android:id="@+id/action_onboarding_to_hello"
             app:destination="@id/helloFragment"
