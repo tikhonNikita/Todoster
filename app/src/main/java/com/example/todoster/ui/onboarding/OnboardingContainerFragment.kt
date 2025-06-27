@@ -50,12 +50,12 @@ class OnboardingContainerFragment : Fragment() {
         if (currentItem < adapter.itemCount - 1) {
             onboardingViewPager.setCurrentItem(currentItem + 1)
         } else {
-            findNavController().navigate(R.id.action_onboarding_to_hello)
+            findNavController().navigate(R.id.action_onboarding_to_login)
         }
     }
 
     private fun skipToEnd() {
-        findNavController().navigate(R.id.action_onboarding_to_hello)
+        findNavController().navigate(R.id.action_onboarding_to_login)
     }
 
     private inner class OnboardingPagerAdapter(fragmentActivity: FragmentActivity) :

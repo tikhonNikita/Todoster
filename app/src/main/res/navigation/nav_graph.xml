@@ -19,7 +19,28 @@
         <action
             android:id="@+id/action_onboarding_to_hello"
             app:destination="@id/helloFragment"
-            app:popUpTo="@id/onboardingContainerFragment"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
+
+        <action
+            android:id="@+id/action_onboarding_to_login"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true"
+            />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.todoster.ui.login.LoginScreen"
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login_screen">
+
+        <action
+            android:id="@+id/action_login_to_home"
+            app:destination="@id/helloFragment"
+            app:popUpTo="@id/nav_graph"
             app:popUpToInclusive="true" />
     </fragment>
 
