@@ -6,7 +6,6 @@ import android.graphics.Canvas
 import android.graphics.Paint
 import android.graphics.RectF
 import android.util.AttributeSet
-import android.view.MotionEvent
 import android.view.View
 import androidx.core.content.ContextCompat
 import com.example.todoster.R
@@ -17,8 +16,8 @@ class StepperIndicatorView @JvmOverloads constructor(
     defStyleAttr: Int = 0
 ) : View(context, attrs, defStyleAttr) {
 
-    private var activeColor = ContextCompat.getColor(context, R.color.primary_light)
-    private var inactiveColor = ContextCompat.getColor(context, R.color.primary_variant_light)
+    private var activeColor = ContextCompat.getColor(context, R.color.md_theme_primary)
+    private var inactiveColor = ContextCompat.getColor(context, R.color.md_theme_primaryContainer)
 
     private var activeWidth = 25f.dpToPx()
     private var inactiveWidth = 8f.dpToPx()

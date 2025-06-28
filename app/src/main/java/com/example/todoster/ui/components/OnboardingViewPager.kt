@@ -35,11 +35,11 @@ class OnboardingViewPager @JvmOverloads constructor(
         
         val activeColor = typedArray.getColor(
             R.styleable.OnboardingViewPager_activeColor,
-            ContextCompat.getColor(context, R.color.primary_light)
+            ContextCompat.getColor(context, R.color.md_theme_primary)
         )
         val inactiveColor = typedArray.getColor(
             R.styleable.OnboardingViewPager_inactiveColor,
-            ContextCompat.getColor(context, R.color.primary_variant_light)
+            ContextCompat.getColor(context, R.color.md_theme_primaryContainer)
         )
         val activeWidth = typedArray.getDimension(
             R.styleable.OnboardingViewPager_activeWidth,

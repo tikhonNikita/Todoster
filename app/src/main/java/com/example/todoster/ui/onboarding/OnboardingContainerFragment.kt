@@ -55,7 +55,7 @@ class OnboardingContainerFragment : Fragment() {
     }
 
     private fun skipToEnd() {
-        findNavController().navigate(R.id.action_onboarding_to_login)
+        findNavController().popBackStack(R.id.nav_graph, true)
     }
 
     private inner class OnboardingPagerAdapter(fragmentActivity: FragmentActivity) :

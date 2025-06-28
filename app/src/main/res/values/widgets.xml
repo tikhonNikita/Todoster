@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Widget.Todoster.Button" parent="Widget.Material3.Button">
+        <item name="fontFamily">@font/raleway</item>
+        <item name="android:fontFamily">@font/raleway</item>
+        <item name="fontVariationSettings">"'wght' 500"</item>
+    </style>
+</resources>

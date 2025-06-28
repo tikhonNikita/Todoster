@@ -27,8 +27,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/skip_button"
-        app:activeColor="@color/primary_light"
-        app:inactiveColor="@color/primary_variant_light"
+        app:activeColor="@color/md_theme_primary"
+        app:inactiveColor="@color/md_theme_primaryContainer"
         app:indicatorSpacing="10dp"
         app:cornerRadius="4dp"
         app:touchPadding="8dp" />
