@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <attr name="iconForegroundColor" format="color" />
+    <attr name="primaryButtonStyle" format="reference" />
     
     <declare-styleable name="OnboardingViewPager">
         <attr name="activeColor" format="color" />

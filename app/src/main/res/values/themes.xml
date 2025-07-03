@@ -3,6 +3,7 @@
 
     <style name="Base.Theme.Todoster.Widgets" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="materialButtonStyle">@style/Widget.Todoster.Button</item>
+        <item name="primaryButtonStyle">@style/Widget.Todoster.Button.Primary</item>
 
     </style>
 
