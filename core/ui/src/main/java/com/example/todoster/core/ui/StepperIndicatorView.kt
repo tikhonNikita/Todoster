@@ -1,6 +1,5 @@
-package com.example.todoster.ui.components
+package com.example.todoster.core.ui
 
-import android.animation.ValueAnimator
 import android.content.Context
 import android.graphics.Canvas
 import android.graphics.Paint
@@ -8,7 +7,7 @@ import android.graphics.RectF
 import android.util.AttributeSet
 import android.view.View
 import androidx.core.content.ContextCompat
-import com.example.todoster.R
+import com.example.todoster.core.ui.R
 
 class StepperIndicatorView @JvmOverloads constructor(
     context: Context,

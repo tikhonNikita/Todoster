@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Widget.Todoster.Button" parent="Widget.Material3.Button">
+        <item name="fontFamily">@font/raleway</item>
+        <item name="android:fontFamily">@font/raleway</item>
+        <item name="fontVariationSettings">"'wght' 500"</item>
+    </style>
+
+    <style name="Widget.Todoster.Button.Primary" parent="Widget.Todoster.Button">
+        <item name="rippleColor">@color/md_theme_onPrimaryContainer</item>
+        <item name="android:stateListAnimator">@animator/button_state_animator</item>
+        <item name="android:elevation">4dp</item>
+        <item name="elevation">4dp</item>
+    </style>
+
+</resources>

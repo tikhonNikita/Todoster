@@ -21,3 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Todoster"
 include(":app")
+include(":core:ui")

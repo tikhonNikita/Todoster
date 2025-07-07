@@ -6,11 +6,10 @@ import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.widget.LinearLayout
 import androidx.core.content.ContextCompat
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
 import com.example.todoster.R
+import com.example.todoster.core.ui.StepperIndicatorView
 
 class OnboardingViewPager @JvmOverloads constructor(
     context: Context,
@@ -35,11 +34,11 @@ class OnboardingViewPager @JvmOverloads constructor(
         
         val activeColor = typedArray.getColor(
             R.styleable.OnboardingViewPager_activeColor,
-            ContextCompat.getColor(context, R.color.md_theme_primary)
+            ContextCompat.getColor(context, com.example.todoster.core.ui.R.color.md_theme_primary)
         )
         val inactiveColor = typedArray.getColor(
             R.styleable.OnboardingViewPager_inactiveColor,
-            ContextCompat.getColor(context, R.color.md_theme_primaryContainer)
+            ContextCompat.getColor(context, com.example.todoster.core.ui.R.color.md_theme_primaryContainer)
         )
         val activeWidth = typedArray.getDimension(
             R.styleable.OnboardingViewPager_activeWidth,

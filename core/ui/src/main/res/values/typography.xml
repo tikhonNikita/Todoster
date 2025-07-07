@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="TextAppearance.Headline.Large" parent="TextAppearance.Material3.HeadlineLarge">
+        <item name="fontFamily">@font/raleway</item>
+        <item name="android:fontFamily">@font/raleway</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
+        <item name="fontVariationSettings">"'wght' 700"</item>
+    </style>
+
+    <style name="TextAppearance.Title.Large" parent="TextAppearance.Material3.TitleLarge">
+        <item name="fontFamily">@font/raleway</item>
+        <item name="android:fontFamily">@font/raleway</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
+        <item name="fontVariationSettings">"'wght' 600"</item>
+    </style>
+
+    <style name="TextAppearance.Title.Medium" parent="TextAppearance.Material3.TitleMedium">
+        <item name="fontFamily">@font/raleway</item>
+        <item name="android:fontFamily">@font/raleway</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
+        <item name="fontVariationSettings">"'wght' 500"</item>
+    </style>
+
+    <style name="TextAppearance.Body.Large" parent="TextAppearance.Material3.BodyLarge">
+        <item name="fontFamily">@font/raleway</item>
+        <item name="android:fontFamily">@font/raleway</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
+        <item name="fontVariationSettings">"'wght' 400"</item>
+    </style>
+
+    <style name="TextAppearance.Body.Medium" parent="TextAppearance.Material3.BodyMedium">
+        <item name="fontFamily">@font/raleway</item>
+        <item name="android:fontFamily">@font/raleway</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
+        <item name="fontVariationSettings">"'wght' 400"</item>
+    </style>
+
+    <style name="TextAppearance.Body.Small" parent="TextAppearance.Material3.BodySmall">
+        <item name="fontFamily">@font/raleway</item>
+        <item name="android:fontFamily">@font/raleway</item>
+        <item name="android:textColor">?attr/colorOnSurfaceVariant</item>
+        <item name="fontVariationSettings">"'wght' 400"</item>
+    </style>
+
+    <style name="TextAppearance.Label.Large" parent="TextAppearance.Material3.LabelLarge">
+        <item name="fontFamily">@font/raleway</item>
+        <item name="android:fontFamily">@font/raleway</item>
+        <item name="android:textColor">?attr/colorOnSurfaceVariant</item>
+        <item name="fontVariationSettings">"'wght' 500"</item>
+    </style>
+
+    <style name="TextAppearance.Label.Medium" parent="TextAppearance.Material3.LabelMedium">
+        <item name="fontFamily">@font/raleway</item>
+        <item name="android:fontFamily">@font/raleway</item>
+        <item name="android:textColor">?attr/colorOnSurfaceVariant</item>
+        <item name="fontVariationSettings">"'wght' 500"</item>
+    </style>
+
+    <style name="TextAppearance.Label.Small" parent="TextAppearance.Material3.LabelSmall">
+        <item name="fontFamily">@font/raleway</item>
+        <item name="android:fontFamily">@font/raleway</item>
+        <item name="android:textColor">?attr/colorOnSurfaceVariant</item>
+        <item name="fontVariationSettings">"'wght' 500"</item>
+    </style>
+
+</resources> 
