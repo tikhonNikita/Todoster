@@ -10,7 +10,7 @@ import android.widget.TextView
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import com.example.todoster.R
-import com.example.todoster.core.utils.argument
+import com.example.todoster.utils.argument
 
 class OnboardingStepFragment : Fragment() {
 

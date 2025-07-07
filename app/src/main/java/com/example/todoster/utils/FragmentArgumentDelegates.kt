@@ -1,4 +1,4 @@
-package com.example.todoster.core.utils
+package com.example.todoster.utils
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
