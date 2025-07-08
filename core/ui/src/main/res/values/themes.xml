@@ -49,8 +49,10 @@
         <item name="colorSurfaceContainerHigh">@color/md_theme_surfaceContainerHigh</item>
         <item name="colorSurfaceContainerHighest">@color/md_theme_surfaceContainerHighest</item>
 
+        <!--        Widget styles-->
         <item name="materialButtonStyle">@style/Widget.Todoster.Button</item>
         <item name="primaryButtonStyle">@style/Widget.Todoster.Button.Primary</item>
+        <item name="textAppearanceHeadline1">@style/PrimaryTitle</item>
     </style>
 
     <style name="Base.Theme.Todoster" parent="Base.V26.Theme.Todoster" />
