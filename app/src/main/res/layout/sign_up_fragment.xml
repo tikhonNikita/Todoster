@@ -27,14 +27,24 @@
         tools:text="Create an account" />
 
 
-    <com.google.android.material.textfield.MaterialAutoCompleteTextView
+    <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:autofillHints="emailAddress"
+        android:background="@drawable/text_input_background"
+        android:fontFamily="@font/raleway"
+        android:inputType="textEmailAddress"
+        android:padding="8dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        app:fontVariationSettings="'wght' 400"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/myTextView" />
-
-
+        app:layout_constraintTop_toBottomOf="@+id/myTextView"
+        tools:text="THis is some test text" />
+        
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
