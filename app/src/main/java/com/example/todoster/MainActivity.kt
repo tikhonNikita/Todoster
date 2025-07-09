@@ -1,6 +1,7 @@
-package com.example.todoster.ui.main
+package com.example.todoster
 
 import android.os.Bundle
+import androidx.activity.OnBackPressedCallback
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
@@ -9,8 +10,6 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
-import androidx.activity.OnBackPressedCallback
-import com.example.todoster.R
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
@@ -49,7 +48,7 @@ class MainActivity : AppCompatActivity() {
         val navHostFragment = supportFragmentManager
             .findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         navController = navHostFragment.navController
-        
+
         //TODO: fix the navigation. Now when go from onboarding to login - stack is not cleared
         val callback = object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
@@ -83,4 +82,4 @@ class MainActivity : AppCompatActivity() {
             navController.navigate(R.id.action_onboarding_to_hello)
         }
     }
-} 
+}

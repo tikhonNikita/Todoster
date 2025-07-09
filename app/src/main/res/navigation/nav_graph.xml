@@ -16,6 +16,7 @@
         android:name="com.example.todoster.ui.onboarding.OnboardingContainerFragment"
         android:label="OnboardingContainerFragment"
         tools:layout="@layout/onboarding_container_fragment">
+
         <action
             android:id="@+id/action_onboarding_to_hello"
             app:destination="@id/helloFragment"
@@ -43,8 +44,7 @@
             app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_loginFragment_to_signUpFragment"
-            app:destination="@id/signUpFragment"
-        />
+            app:destination="@id/signUpFragment" />
     </fragment>
 
     <fragment
@@ -54,7 +54,10 @@
         tools:layout="@layout/sign_up_fragment">
         <action
             android:id="@+id/action_signUpFragment_to_helloFragment"
-            app:destination="@id/helloFragment" />
+            app:destination="@id/helloFragment"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
+
     </fragment>
 
 
