@@ -1,7 +1,6 @@
 package com.example.todoster
 
 import android.os.Bundle
-import androidx.activity.OnBackPressedCallback
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
@@ -49,15 +48,8 @@ class MainActivity : AppCompatActivity() {
             .findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         navController = navHostFragment.navController
 
-        //TODO: fix the navigation. Now when go from onboarding to login - stack is not cleared
-        val callback = object : OnBackPressedCallback(true) {
-            override fun handleOnBackPressed() {
-                if (!navController.navigateUp()) {
-                    finish()
-                }
-            }
-        }
-        onBackPressedDispatcher.addCallback(this, callback)
+        // Navigation Controller handles back navigation automatically
+        // No custom OnBackPressedCallback needed!
     }
 
     private fun performInitialization() {
@@ -79,7 +71,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun navigateToAppropriateScreen() {
         if (isAuthenticated) {
-            navController.navigate(R.id.action_onboarding_to_hello)
+            navController.navigate(R.id.action_onboarding_to_main)
         }
     }
 }

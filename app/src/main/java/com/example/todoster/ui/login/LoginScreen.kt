@@ -21,13 +21,13 @@ class LoginScreen : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val button = view.findViewById<Button>(R.id.btn_login)
         button.setOnClickListener {
-            findNavController().navigate(R.id.action_login_to_home)
+            findNavController().navigate(R.id.action_login_to_main)
         }
 
         val signUtButton = view.findViewById<Button>(R.id.btn_signup)
 
         signUtButton.setOnClickListener {
-            findNavController().navigate(R.id.action_loginFragment_to_signUpFragment)
+            findNavController().navigate(R.id.action_login_to_signup)
         }
     }
 

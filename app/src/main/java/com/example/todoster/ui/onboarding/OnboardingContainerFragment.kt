@@ -50,7 +50,7 @@ class OnboardingContainerFragment : Fragment() {
         if (currentItem < adapter.itemCount - 1) {
             onboardingViewPager.setCurrentItem(currentItem + 1)
         } else {
-            findNavController().navigate(R.id.action_onboarding_to_login)
+            findNavController().navigate(R.id.action_onboarding_to_auth)
         }
     }
 

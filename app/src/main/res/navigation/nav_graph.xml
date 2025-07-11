@@ -5,12 +5,7 @@
     android:id="@+id/nav_graph"
     app:startDestination="@id/onboardingContainerFragment">
 
-    <fragment
-        android:id="@+id/helloFragment"
-        android:name="com.example.todoster.ui.main.HelloFragment"
-        android:label="HelloFragment"
-        tools:layout="@layout/main_hello_fragment" />
-
+    <!-- Onboarding Flow -->
     <fragment
         android:id="@+id/onboardingContainerFragment"
         android:name="com.example.todoster.ui.onboarding.OnboardingContainerFragment"
@@ -18,19 +13,19 @@
         tools:layout="@layout/onboarding_container_fragment">
 
         <action
-            android:id="@+id/action_onboarding_to_hello"
-            app:destination="@id/helloFragment"
-            app:popUpTo="@id/nav_graph"
+            android:id="@+id/action_onboarding_to_auth"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/onboardingContainerFragment"
             app:popUpToInclusive="true" />
 
         <action
-            android:id="@+id/action_onboarding_to_login"
-            app:destination="@id/loginFragment"
-            app:popUpTo="@id/nav_graph"
+            android:id="@+id/action_onboarding_to_main"
+            app:destination="@id/helloFragment"
+            app:popUpTo="@id/onboardingContainerFragment"
             app:popUpToInclusive="true" />
     </fragment>
 
-
+    <!-- Authentication Flow -->
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.example.todoster.ui.login.LoginScreen"
@@ -38,13 +33,14 @@
         tools:layout="@layout/fragment_login_screen">
 
         <action
-            android:id="@+id/action_login_to_home"
-            app:destination="@id/helloFragment"
-            app:popUpTo="@id/nav_graph"
-            app:popUpToInclusive="true" />
-        <action
-            android:id="@+id/action_loginFragment_to_signUpFragment"
+            android:id="@+id/action_login_to_signup"
             app:destination="@id/signUpFragment" />
+
+        <action
+            android:id="@+id/action_login_to_main"
+            app:destination="@id/helloFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
     </fragment>
 
     <fragment
@@ -52,13 +48,19 @@
         android:name="com.example.todoster.ui.SignupFragment"
         android:label="SignUpFragment"
         tools:layout="@layout/sign_up_fragment">
-        <action
-            android:id="@+id/action_signUpFragment_to_helloFragment"
-            app:destination="@id/helloFragment"
-            app:popUpTo="@id/nav_graph"
-            app:popUpToInclusive="true" />
 
+        <action
+            android:id="@+id/action_signup_to_main"
+            app:destination="@id/helloFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
     </fragment>
 
+    <!-- Main App Flow -->
+    <fragment
+        android:id="@+id/helloFragment"
+        android:name="com.example.todoster.ui.main.HelloFragment"
+        android:label="HelloFragment"
+        tools:layout="@layout/main_hello_fragment" />
 
 </navigation> 
