@@ -14,9 +14,7 @@ class PrimaryEditText @JvmOverloads constructor(
 ) : AppCompatEditText(context, attrs, defStyleAttr) {
 
     init {
-        setSingleLine()
         inputType = inputType and InputType.TYPE_TEXT_FLAG_MULTI_LINE.inv()
-
         background = AppCompatResources.getDrawable(context, R.drawable.text_input_background)
     }
 }
