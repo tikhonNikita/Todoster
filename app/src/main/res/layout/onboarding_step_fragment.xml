@@ -55,7 +55,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <com.example.todoster.core.ui.PrimaryButton
+    <com.example.todoster.core.ui.components.PrimaryButton
         android:id="@+id/complete_onboarding_button"
         style="@style/Widget.Todoster.Button.Primary"
         android:layout_width="0dp"

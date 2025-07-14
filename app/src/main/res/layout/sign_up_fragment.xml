@@ -27,26 +27,17 @@
         tools:text="Create an account" />
 
 
-    <EditText
+    <com.example.todoster.core.ui.components.PrimaryEditText
         android:id="@+id/editText"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:autofillHints="emailAddress"
-        android:background="@drawable/text_input_background"
-        android:fontFamily="@font/raleway"
-        android:inputType="textEmailAddress"
-        android:padding="8dp"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        android:textColor="@android:color/white"
-        android:textSize="16sp"
-        app:fontVariationSettings="'wght' 400"
+        android:cursorVisible="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/myTextView"
         tools:text="THis is some test text" />
 
-    <com.example.todoster.core.ui.PrimaryButton
+    <com.example.todoster.core.ui.components.PrimaryButton
         android:id="@+id/btn_signup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

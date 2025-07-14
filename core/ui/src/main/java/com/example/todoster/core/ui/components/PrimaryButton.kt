@@ -1,4 +1,4 @@
-package com.example.todoster.core.ui
+package com.example.todoster.core.ui.components
 
 import android.content.Context
 import android.util.AttributeSet
@@ -9,4 +9,4 @@ class PrimaryButton @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = R.attr.primaryButtonStyle
-) : MaterialButton(context, attrs, defStyleAttr) 
+) : MaterialButton(context, attrs, defStyleAttr)

@@ -53,6 +53,7 @@
         <item name="materialButtonStyle">@style/Widget.Todoster.Button</item>
         <item name="primaryButtonStyle">@style/Widget.Todoster.Button.Primary</item>
         <item name="textAppearanceHeadline1">@style/PrimaryTitle</item>
+        <item name="primaryEditTextStyle">@style/PrimaryInput</item>
     </style>
 
     <style name="Base.Theme.Todoster" parent="Base.V26.Theme.Todoster" />

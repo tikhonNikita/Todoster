@@ -9,7 +9,7 @@ import androidx.core.content.ContextCompat
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
 import com.example.todoster.R
-import com.example.todoster.core.ui.StepperIndicatorView
+import com.example.todoster.core.ui.components.StepperIndicatorView
 
 class OnboardingViewPager @JvmOverloads constructor(
     context: Context,

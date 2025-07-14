@@ -1,4 +1,4 @@
-package com.example.todoster.core.ui
+package com.example.todoster.core.ui.components
 
 import android.content.Context
 import android.graphics.Canvas
@@ -58,7 +58,7 @@ class StepperIndicatorView @JvmOverloads constructor(
         this.spacing = spacing
         this.cornerRadius = cornerRadius
         this.touchPadding = touchPadding
-        
+
         animatedWidths = FloatArray(totalSteps) { if (it == currentStep) activeWidth else inactiveWidth }
         updateStepBounds()
     }
@@ -158,4 +158,4 @@ class StepperIndicatorView @JvmOverloads constructor(
     private fun Float.dpToPx(): Float {
         return this * context.resources.displayMetrics.density
     }
-} 
+}
