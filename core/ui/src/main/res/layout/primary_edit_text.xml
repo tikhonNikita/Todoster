@@ -11,6 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="4dp"
         android:textAppearance="@style/TextAppearance.Label.Medium"
+        android:labelFor="@+id/et_input"
         android:visibility="gone" />
 
     <!-- Input EditText -->

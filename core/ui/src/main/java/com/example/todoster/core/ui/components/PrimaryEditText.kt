@@ -1,9 +1,12 @@
 package com.example.todoster.core.ui.components
 
 import android.content.Context
+import android.os.Build
 import android.text.InputType
 import android.util.AttributeSet
 import android.view.LayoutInflater
+import android.view.View
+import android.view.inputmethod.EditorInfo
 import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -54,6 +57,50 @@ class PrimaryEditText @JvmOverloads constructor(
             getString(R.styleable.PrimaryEditText_android_text)?.let { text ->
                 inputEditText.setText(text)
             }
+            
+            // Set autofill hints (API 26+)
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                getString(R.styleable.PrimaryEditText_android_autofillHints)?.let { autofillHints ->
+                    inputEditText.setAutofillHints(autofillHints)
+                }
+                
+                // Set autofill importance
+                val autofillImportance = getInt(R.styleable.PrimaryEditText_android_importantForAutofill, View.IMPORTANT_FOR_AUTOFILL_AUTO)
+                inputEditText.importantForAutofill = autofillImportance
+            }
+            
+            // Set content description
+            getString(R.styleable.PrimaryEditText_android_contentDescription)?.let { contentDesc ->
+                inputEditText.contentDescription = contentDesc
+            }
+            
+            // Set IME options
+            val imeOptions = getInt(R.styleable.PrimaryEditText_android_imeOptions, EditorInfo.IME_NULL)
+            if (imeOptions != EditorInfo.IME_NULL) {
+                inputEditText.imeOptions = imeOptions
+            }
+            
+            // Set max lines
+            val maxLines = getInt(R.styleable.PrimaryEditText_android_maxLines, -1)
+            if (maxLines > 0) {
+                inputEditText.maxLines = maxLines
+            }
+            
+            // Set min lines
+            val minLines = getInt(R.styleable.PrimaryEditText_android_minLines, -1)
+            if (minLines > 0) {
+                inputEditText.minLines = minLines
+            }
+            
+            // Set max length
+            val maxLength = getInt(R.styleable.PrimaryEditText_android_maxLength, -1)
+            if (maxLength > 0) {
+                inputEditText.filters = arrayOf(android.text.InputFilter.LengthFilter(maxLength))
+            }
+            
+            // Set enabled state
+            val enabled = getBoolean(R.styleable.PrimaryEditText_android_enabled, true)
+            inputEditText.isEnabled = enabled
         }
     }
 
@@ -62,10 +109,12 @@ class PrimaryEditText @JvmOverloads constructor(
      */
     fun setLabel(label: String?) {
         if (label.isNullOrEmpty()) {
-            labelTextView.visibility = GONE
+            labelTextView.visibility = View.GONE
         } else {
             labelTextView.text = label
-            labelTextView.visibility = VISIBLE
+            labelTextView.visibility = View.VISIBLE
+            // Обновляем content description для accessibility
+            inputEditText.contentDescription = inputEditText.contentDescription ?: label
         }
     }
 
@@ -74,10 +123,10 @@ class PrimaryEditText @JvmOverloads constructor(
      */
     fun setError(error: String?) {
         if (error.isNullOrEmpty()) {
-            errorTextView.visibility = GONE
+            errorTextView.visibility = View.GONE
         } else {
             errorTextView.text = error
-            errorTextView.visibility = VISIBLE
+            errorTextView.visibility = View.VISIBLE
         }
     }
 
@@ -121,5 +170,21 @@ class PrimaryEditText @JvmOverloads constructor(
      */
     fun setInputType(inputType: Int) {
         inputEditText.inputType = inputType and InputType.TYPE_TEXT_FLAG_MULTI_LINE.inv()
+    }
+    
+    /**
+     * Устанавливает IME options
+     */
+    fun setImeOptions(imeOptions: Int) {
+        inputEditText.imeOptions = imeOptions
+    }
+    
+    /**
+     * Устанавливает максимальную длину текста
+     */
+    fun setMaxLength(maxLength: Int) {
+        if (maxLength > 0) {
+            inputEditText.filters = arrayOf(android.text.InputFilter.LengthFilter(maxLength))
+        }
     }
 }
