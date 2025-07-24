@@ -2,6 +2,8 @@ package com.example.todoster.core.ui.components
 
 import android.content.Context
 import android.os.Build
+import android.os.Parcel
+import android.os.Parcelable
 import android.text.InputType
 import android.util.AttributeSet
 import android.view.LayoutInflater
@@ -185,6 +187,72 @@ class PrimaryEditText @JvmOverloads constructor(
     fun setMaxLength(maxLength: Int) {
         if (maxLength > 0) {
             inputEditText.filters = arrayOf(android.text.InputFilter.LengthFilter(maxLength))
+        }
+    }
+
+    override fun onSaveInstanceState(): Parcelable? {
+        val superState = super.onSaveInstanceState()
+        return SavedState(superState).apply {
+            text = getText()
+            labelText = labelTextView.text.toString()
+            errorText = if (errorTextView.visibility == View.VISIBLE) {
+                errorTextView.text.toString()
+            } else {
+                null
+            }
+        }
+    }
+
+    override fun onRestoreInstanceState(state: Parcelable?) {
+        if (state !is SavedState) {
+            super.onRestoreInstanceState(state)
+            return
+        }
+        
+        super.onRestoreInstanceState(state.superState)
+        setText(state.text)
+        setLabel(state.labelText)
+        state.errorText?.let { setError(it) }
+    }
+
+    override fun dispatchSaveInstanceState(container: android.util.SparseArray<Parcelable>) {
+        dispatchFreezeSelfOnly(container)
+    }
+
+    override fun dispatchRestoreInstanceState(container: android.util.SparseArray<Parcelable>) {
+        dispatchThawSelfOnly(container)
+    }
+
+
+
+    private class SavedState : BaseSavedState {
+        var text: String = ""
+        var labelText: String = ""
+        var errorText: String? = null
+
+        constructor(superState: Parcelable?) : super(superState)
+
+        private constructor(parcel: Parcel) : super(parcel) {
+            text = parcel.readString() ?: ""
+            labelText = parcel.readString() ?: ""
+            errorText = parcel.readString()
+        }
+
+        override fun writeToParcel(out: Parcel, flags: Int) {
+            super.writeToParcel(out, flags)
+            out.writeString(text)
+            out.writeString(labelText)
+            out.writeString(errorText)
+        }
+
+        companion object CREATOR : Parcelable.Creator<SavedState> {
+            override fun createFromParcel(parcel: Parcel): SavedState {
+                return SavedState(parcel)
+            }
+
+            override fun newArray(size: Int): Array<SavedState?> {
+                return arrayOfNulls(size)
+            }
         }
     }
 }
