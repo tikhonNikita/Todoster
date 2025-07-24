@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <attr name="iconForegroundColor" format="color" />
-    <attr name="primaryButtonStyle" format="reference" />\
+    <attr name="primaryButtonStyle" format="reference" />
     <attr name="primaryEditTextStyle" format="reference" />
+    
+    <!-- PrimaryEditText custom attributes -->
+    <declare-styleable name="PrimaryEditText">
+        <attr name="label" format="string" />
+        <attr name="errorMessage" format="string" />
+        <attr name="android:hint" />
+        <attr name="android:inputType" />
+        <attr name="android:text" />
+    </declare-styleable>
 </resources>

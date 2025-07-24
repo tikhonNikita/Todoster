@@ -4,9 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="16dp"
-
-    >
+    android:layout_margin="16dp">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_top_margin"
@@ -14,7 +12,6 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.10" />
-
 
     <TextView
         android:id="@+id/myTextView"
@@ -26,26 +23,51 @@
         app:layout_constraintTop_toBottomOf="@+id/guideline_top_margin"
         tools:text="Create an account" />
 
-
     <com.example.todoster.core.ui.components.PrimaryEditText
-        android:id="@+id/editText"
+        android:autofillHints="emailAddress"
+        android:id="@+id/et_email"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:cursorVisible="true"
+        android:layout_marginTop="32dp"
+        android:hint="Enter your email"
+        android:inputType="textEmailAddress"
+        app:label="Email"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/myTextView"
-        tools:text="THis is some test text" />
+        app:layout_constraintTop_toBottomOf="@+id/myTextView" />
+
+    <com.example.todoster.core.ui.components.PrimaryEditText
+        android:id="@+id/et_password"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="Enter your password"
+        android:inputType="textPassword"
+        app:label="Password"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_email" />
+
+    <com.example.todoster.core.ui.components.PrimaryEditText
+        android:id="@+id/et_confirm_password"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="Confirm your password"
+        android:inputType="textPassword"
+        app:label="Confirm Password"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_password" />
 
     <com.example.todoster.core.ui.components.PrimaryButton
         android:id="@+id/btn_signup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Go back to login"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="32dp"
+        android:text="Create Account"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
-
+        app:layout_constraintTop_toBottomOf="@+id/et_confirm_password" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
