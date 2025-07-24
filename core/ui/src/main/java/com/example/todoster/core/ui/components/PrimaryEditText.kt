@@ -15,6 +15,5 @@ class PrimaryEditText @JvmOverloads constructor(
 
     init {
         inputType = inputType and InputType.TYPE_TEXT_FLAG_MULTI_LINE.inv()
-        background = AppCompatResources.getDrawable(context, R.drawable.text_input_background)
     }
 }
