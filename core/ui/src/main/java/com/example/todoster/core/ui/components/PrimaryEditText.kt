@@ -15,6 +15,11 @@ import android.widget.TextView
 import androidx.core.content.withStyledAttributes
 import com.example.todoster.core.ui.R
 
+
+// TODO: дочитать диалог Cursor:
+// TODO: дочитать диалог https://gemini.google.com/app/723d67aa98c28530:
+// TODO: дочитать диалог https://gemini.google.com/app/2c54ea33f9057986
+
 class PrimaryEditText @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
